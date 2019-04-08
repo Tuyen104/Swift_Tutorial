@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="TableViewDemo02" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="78"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="77.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Z7c-p8-1t4">
+                        <rect key="frame" x="20" y="8" width="61.5" height="61.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Z7c-p8-1t4" secondAttribute="height" multiplier="1:1" id="7Xp-ih-UFT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIl-Nv-yTr">
+                        <rect key="frame" x="91.5" y="12" width="8" height="20"/>
+                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-1e-hK7">
+                        <rect key="frame" x="114.5" y="11" width="139.5" height="66.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monument Valley 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-Yk-AMb">
+                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A story of beauty and illusion" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx0-DO-zY0">
+                                <rect key="frame" x="0.0" y="44" width="109" height="31.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
+                                <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OyS-Yk-AMb" firstAttribute="leading" secondItem="pbs-1e-hK7" secondAttribute="leading" id="9Yf-pg-wJP"/>
+                            <constraint firstItem="OyS-Yk-AMb" firstAttribute="top" secondItem="pbs-1e-hK7" secondAttribute="top" id="BGx-7Q-Uv7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OyS-Yk-AMb" secondAttribute="trailing" id="Ilb-s4-qUy"/>
+                            <constraint firstItem="Gx0-DO-zY0" firstAttribute="leading" secondItem="pbs-1e-hK7" secondAttribute="leading" id="SOt-AG-mxd"/>
+                            <constraint firstItem="Gx0-DO-zY0" firstAttribute="top" secondItem="OyS-Yk-AMb" secondAttribute="bottom" constant="3" id="Ubr-pE-Zkk"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gx0-DO-zY0" secondAttribute="trailing" id="rRo-5D-1al"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9Y-cz-2dc">
+                        <rect key="frame" x="254" y="23" width="61" height="32"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                        <state key="normal" title="$6.99"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l9Y-cz-2dc" firstAttribute="leading" secondItem="pbs-1e-hK7" secondAttribute="trailing" id="0ne-8P-UDQ"/>
+                    <constraint firstItem="QIl-Nv-yTr" firstAttribute="leading" secondItem="Z7c-p8-1t4" secondAttribute="trailing" constant="10" id="5WY-RF-iJ0"/>
+                    <constraint firstItem="l9Y-cz-2dc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5uX-fL-CMq"/>
+                    <constraint firstItem="pbs-1e-hK7" firstAttribute="leading" secondItem="QIl-Nv-yTr" secondAttribute="trailing" constant="15" id="5vv-ES-fOx"/>
+                    <constraint firstItem="QIl-Nv-yTr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="8Fq-Xq-zFV"/>
+                    <constraint firstAttribute="bottom" secondItem="pbs-1e-hK7" secondAttribute="bottom" id="BQQ-AG-ffz"/>
+                    <constraint firstItem="pbs-1e-hK7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Jo1-dM-fgd"/>
+                    <constraint firstItem="Z7c-p8-1t4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ruy-0R-soQ"/>
+                    <constraint firstAttribute="trailing" secondItem="pbs-1e-hK7" secondAttribute="trailing" constant="81" id="WQX-fh-bqG"/>
+                    <constraint firstItem="Z7c-p8-1t4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gJY-TR-jHD"/>
+                    <constraint firstAttribute="bottom" secondItem="Z7c-p8-1t4" secondAttribute="bottom" constant="8" id="heJ-2f-TX8"/>
+                    <constraint firstAttribute="trailing" secondItem="l9Y-cz-2dc" secondAttribute="trailing" constant="20" id="lfh-yx-6lf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="priceButton" destination="l9Y-cz-2dc" id="WbJ-ZK-JPx"/>
+            </connections>
+            <point key="canvasLocation" x="149.59999999999999" y="161.01949025487258"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_avatar" width="62" height="62"/>
+    </resources>
+</document>

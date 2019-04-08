@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Buoi06Ex01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuyền" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mC3-Kr-TWZ">
+                                <rect key="frame" x="142" y="69" width="91" height="60"/>
+                                <color key="backgroundColor" red="0.20900336283239163" green="0.9350429211627993" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="r48-4P-TOB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.33676005347317672" green="0.53263045054066016" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ep4-JR-GOb">
+                                <rect key="frame" x="21" y="150" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" smartQuotesType="yes"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwJ-ti-wuM">
+                                <rect key="frame" x="137.5" y="583" width="100" height="45"/>
+                                <color key="backgroundColor" red="0.20900336280000001" green="0.93504292119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1pt-oq-SqS"/>
+                                    <constraint firstAttribute="height" constant="45" id="8mc-3Z-Tps"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l4h-aC-XMb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ep4-JR-GOb" firstAttribute="top" secondItem="mC3-Kr-TWZ" secondAttribute="bottom" constant="21" id="CW8-jF-PzS"/>
+                            <constraint firstItem="mwJ-ti-wuM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="D3c-Di-Tzq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ep4-JR-GOb" secondAttribute="trailing" constant="21" id="DwW-cb-FIJ"/>
+                            <constraint firstItem="ep4-JR-GOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="Tey-eN-Gi1"/>
+                            <constraint firstItem="mC3-Kr-TWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="euN-3r-S7j"/>
+                            <constraint firstItem="mC3-Kr-TWZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gsd-rO-mn5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mwJ-ti-wuM" secondAttribute="bottom" constant="39" id="vK7-Ai-etg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="mwJ-ti-wuM" id="7xS-mm-Ycr"/>
+                        <outlet property="nameTextField" destination="ep4-JR-GOb" id="099-dy-gK9"/>
+                        <outlet property="tuyenLabel" destination="mC3-Kr-TWZ" id="uhi-vI-qvc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

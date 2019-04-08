@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="CommentsTableViewCell" customModule="TableViewDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 5" translatesAutoresizingMaskIntoConstraints="NO" id="sUM-B5-hhI">
+                        <rect key="frame" x="20" y="20" width="73.5" height="73.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sUM-B5-hhI" secondAttribute="height" multiplier="1:1" id="38P-fS-0th"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05 Jan 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMm-71-E62">
+                        <rect key="frame" x="108.5" y="20" width="79" height="16"/>
+                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=", 10:42 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-4z-L0d">
+                        <rect key="frame" x="187.5" y="20" width="68" height="16"/>
+                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="13"/>
+                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-7Z-abA">
+                        <rect key="frame" x="108.5" y="36" width="218.5" height="31.5"/>
+                        <string key="text">The color of royalty looks fitting on the Air Jordan 1 High "Court Purple." Don't miss out on your pair.
+.
+Available now. Click the link in bio to shop our feed.
+
+#astraler #michaeltun #designer #sneaker</string>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="e7R-jg-dfX">
+                        <rect key="frame" x="108.5" y="82.5" width="9" height="9"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="9" id="Bs8-SU-TwX"/>
+                            <constraint firstAttribute="width" secondItem="e7R-jg-dfX" secondAttribute="height" multiplier="1:1" id="Ee6-XU-ZLb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHL-mh-v5q">
+                        <rect key="frame" x="121.5" y="79.5" width="12" height="14"/>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="11"/>
+                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="RsP-qD-kFe">
+                        <rect key="frame" x="150.5" y="82.5" width="9" height="9"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhH-qe-OBg">
+                        <rect key="frame" x="163.5" y="79.5" width="7" height="14"/>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="11"/>
+                        <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RsP-qD-kFe" firstAttribute="height" secondItem="e7R-jg-dfX" secondAttribute="height" id="9fV-Kb-CIz"/>
+                    <constraint firstAttribute="bottom" secondItem="e7R-jg-dfX" secondAttribute="bottom" constant="23" id="DI7-NA-msN"/>
+                    <constraint firstItem="0Wl-7Z-abA" firstAttribute="leading" secondItem="mMm-71-E62" secondAttribute="leading" id="FXl-eq-mh9"/>
+                    <constraint firstItem="RsP-qD-kFe" firstAttribute="bottom" secondItem="e7R-jg-dfX" secondAttribute="bottom" id="H9q-3l-Sxf"/>
+                    <constraint firstItem="sUM-B5-hhI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HRz-Pv-pow"/>
+                    <constraint firstItem="ZHL-mh-v5q" firstAttribute="leading" secondItem="e7R-jg-dfX" secondAttribute="trailing" constant="4" id="Ity-w4-cfJ"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0Wl-7Z-abA" secondAttribute="trailing" constant="42" id="Qdv-bk-s8i"/>
+                    <constraint firstItem="AhH-qe-OBg" firstAttribute="leading" secondItem="RsP-qD-kFe" secondAttribute="trailing" constant="4" id="W39-zU-FTm"/>
+                    <constraint firstItem="Rmd-4z-L0d" firstAttribute="leading" secondItem="mMm-71-E62" secondAttribute="trailing" id="XNn-rV-wob"/>
+                    <constraint firstItem="ZHL-mh-v5q" firstAttribute="bottom" secondItem="sUM-B5-hhI" secondAttribute="bottom" id="XwO-9f-VHK"/>
+                    <constraint firstItem="RsP-qD-kFe" firstAttribute="width" secondItem="e7R-jg-dfX" secondAttribute="height" multiplier="1:1" id="bdW-Yw-Syf"/>
+                    <constraint firstItem="e7R-jg-dfX" firstAttribute="leading" secondItem="mMm-71-E62" secondAttribute="leading" id="cbL-4s-jG0"/>
+                    <constraint firstItem="mMm-71-E62" firstAttribute="top" secondItem="sUM-B5-hhI" secondAttribute="top" id="cn7-TF-T7G"/>
+                    <constraint firstItem="AhH-qe-OBg" firstAttribute="bottom" secondItem="ZHL-mh-v5q" secondAttribute="bottom" id="fU1-m1-LMP"/>
+                    <constraint firstItem="Rmd-4z-L0d" firstAttribute="top" secondItem="mMm-71-E62" secondAttribute="top" id="g8j-2N-7QE"/>
+                    <constraint firstItem="sUM-B5-hhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="hCG-xS-XYf"/>
+                    <constraint firstItem="0Wl-7Z-abA" firstAttribute="top" secondItem="mMm-71-E62" secondAttribute="bottom" id="jIS-uj-qDw"/>
+                    <constraint firstAttribute="bottom" secondItem="sUM-B5-hhI" secondAttribute="bottom" constant="21" id="n0f-Sx-YVM"/>
+                    <constraint firstItem="mMm-71-E62" firstAttribute="leading" secondItem="sUM-B5-hhI" secondAttribute="trailing" constant="15" id="xAr-zb-08Q"/>
+                    <constraint firstItem="RsP-qD-kFe" firstAttribute="leading" secondItem="ZHL-mh-v5q" secondAttribute="trailing" constant="17" id="xyg-sF-qWh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="96.799999999999997" y="80.50974512743629"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Comment" width="9" height="9"/>
+        <image name="Heart" width="9" height="9"/>
+        <image name="Rectangle 5" width="74" height="74"/>
+    </resources>
+</document>
