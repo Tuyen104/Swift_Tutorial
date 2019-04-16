@@ -9,10 +9,14 @@
 import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var imageView : UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    func updateImageViewWithURL(_ urlString: String){
+        self.imageView.loadGifWithUrlString(urlString)
     }
 
 }

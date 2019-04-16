@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
+typealias hud = SVProgressHUD
 
 class MainViewController: UIViewController {
     @IBOutlet weak var collectionView : UICollectionView!
+    var urlStrings : [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
+        self.requestAction()
     }
     
     fileprivate func setCollectionView(){
@@ -35,11 +39,12 @@ class MainViewController: UIViewController {
 }
 extension MainViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return urlStrings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
+        cell.updateImageViewWithURL(urlStrings[indexPath.row])
         return cell
     }
 }
@@ -56,5 +61,57 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16.0
+    }
+}
+let endPoint : String = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=yiqzM4Jv03uxAXShha84CIaJdtJOXjjw"
+typealias JSObject = [String: Any]
+typealias JSArray = [JSObject]
+//typealias hud = SVProgressHUD
+
+extension MainViewController{
+    func requestAction(){
+        guard let url = URL(string: endPoint) else {return}
+        let param : JSObject = [
+        "q": "ryan+gosling",
+        "api_key": "yiqzM4Jv03uxAXShha84CIaJdtJOXjjw",
+        "limit": "5"
+        ]
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        hud.show()
+        let task = URLSession.shared.dataTask(with: request){(data, response, error) in DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else {return}
+            hud.dismiss()
+            
+            if let response = response {
+                print("RESPONSE: \(response)")
+            }
+            if let error = error {
+                print("ERROR: \(error.localizedDescription)")
+            }
+            if let data = data{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! JSObject
+                    let data = json["data"] as! JSArray
+                    var urlJsons = [String]()
+                    for obj in data{
+                        if let images = obj["images"] as? JSObject,
+                            let smallImage = images["fixed_height_small"] as? JSObject,
+                            let url = smallImage["url"] as? String
+                        {
+                            urlJsons.append(url)
+                        }
+                        
+                    }
+                    self.urlStrings = urlJsons
+                    self.collectionView.reloadData()
+                }
+                catch{
+                    print("ERROR MAPPING JSON: \(error.localizedDescription)")
+                }
+            }
+            }}
+        task.resume()
+        
     }
 }

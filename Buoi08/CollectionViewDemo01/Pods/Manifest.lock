@@ -1,0 +1,24 @@
+PODS:
+  - Kingfisher (4.10.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyGif (4.2.0)
+
+DEPENDENCIES:
+  - Kingfisher (= 4.10.1)
+  - SVProgressHUD (= 2.2.5)
+  - SwiftyGif (= 4.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - SVProgressHUD
+    - SwiftyGif
+
+SPEC CHECKSUMS:
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyGif: a149bf84df23370592f3f075561ae02c8632a314
+
+PODFILE CHECKSUM: dc530abd54b3bb5219d84c78c40771e06c890d4b
+
+COCOAPODS: 1.6.1
