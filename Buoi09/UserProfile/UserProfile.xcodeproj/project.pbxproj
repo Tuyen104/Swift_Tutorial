@@ -18,6 +18,12 @@
 		0711B149226867960089B29D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711B148226867960089B29D /* UIImageViewExtension.swift */; };
 		0711B14C226873AC0089B29D /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711B14A226873AC0089B29D /* MainCollectionViewCell.swift */; };
 		0711B14D226873AC0089B29D /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0711B14B226873AC0089B29D /* MainCollectionViewCell.xib */; };
+		075530DC226EBA850077FC32 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530DB226EBA850077FC32 /* Environment.swift */; };
+		075530DE226ECA860077FC32 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530DD226ECA860077FC32 /* Services.swift */; };
+		075530E0226ED0140077FC32 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530DF226ED0140077FC32 /* APIRequest.swift */; };
+		075530E2226EF7ED0077FC32 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530E1226EF7ED0077FC32 /* Result.swift */; };
+		075530E4226EFEA40077FC32 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530E3226EFEA40077FC32 /* Dispatcher.swift */; };
+		075530E6226F19780077FC32 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075530E5226F19780077FC32 /* NetworkModel.swift */; };
 		ABCBEB46BFB1AD9248DE9B02 /* Pods_UserProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8729518DEC3D0EFE5F77F07 /* Pods_UserProfile.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		0711B148226867960089B29D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		0711B14A226873AC0089B29D /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		0711B14B226873AC0089B29D /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		075530DB226EBA850077FC32 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		075530DD226ECA860077FC32 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		075530DF226ED0140077FC32 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		075530E1226EF7ED0077FC32 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		075530E3226EFEA40077FC32 /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		075530E5226F19780077FC32 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		42AA2B83E6DE515B324030E5 /* Pods-UserProfile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserProfile.release.xcconfig"; path = "Target Support Files/Pods-UserProfile/Pods-UserProfile.release.xcconfig"; sourceTree = "<group>"; };
 		95AF769E653BAEEAC26425B6 /* Pods-UserProfile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserProfile.debug.xcconfig"; path = "Target Support Files/Pods-UserProfile/Pods-UserProfile.debug.xcconfig"; sourceTree = "<group>"; };
 		E8729518DEC3D0EFE5F77F07 /* Pods_UserProfile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserProfile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,8 +100,10 @@
 		0711B1392266B9CE0089B29D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				075530CF226C25A30077FC32 /* Networking */,
 				0711B1442267FFE10089B29D /* User.swift */,
 				0711B146226813410089B29D /* Photo.swift */,
+				075530E5226F19780077FC32 /* NetworkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +141,18 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		075530CF226C25A30077FC32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				075530DB226EBA850077FC32 /* Environment.swift */,
+				075530DD226ECA860077FC32 /* Services.swift */,
+				075530DF226ED0140077FC32 /* APIRequest.swift */,
+				075530E1226EF7ED0077FC32 /* Result.swift */,
+				075530E3226EFEA40077FC32 /* Dispatcher.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		68A8C83BFACF3E97B3F7A442 /* Frameworks */ = {
@@ -229,8 +255,9 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -239,8 +266,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,10 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075530E6226F19780077FC32 /* NetworkModel.swift in Sources */,
 				0711B149226867960089B29D /* UIImageViewExtension.swift in Sources */,
 				0711B14C226873AC0089B29D /* MainCollectionViewCell.swift in Sources */,
 				0711B147226813410089B29D /* Photo.swift in Sources */,
+				075530DC226EBA850077FC32 /* Environment.swift in Sources */,
 				0711B1282266B91F0089B29D /* AppDelegate.swift in Sources */,
+				075530E0226ED0140077FC32 /* APIRequest.swift in Sources */,
+				075530E2226EF7ED0077FC32 /* Result.swift in Sources */,
+				075530E4226EFEA40077FC32 /* Dispatcher.swift in Sources */,
+				075530DE226ECA860077FC32 /* Services.swift in Sources */,
 				0711B13F2266BFB80089B29D /* MainViewController.swift in Sources */,
 				0711B1452267FFE10089B29D /* User.swift in Sources */,
 			);

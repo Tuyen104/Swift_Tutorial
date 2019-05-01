@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import ObjectMapper
 import AFNetworking
+import RealmSwift
 
 
 
@@ -37,6 +38,8 @@ class MainViewController: UIViewController {
         self.followButton.layer.cornerRadius = 18
         self.setupCollectionView()
         self.requestAction()
+        
+        //print("\(self.photos[0].color)")
         
         
     }
@@ -118,67 +121,104 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     }
 }
 
-let endPoint : String = "https://api.unsplash.com/users/kaspercph/photos?client_id=b4c9f248833db2bb34344a0f4abe7448fbb1950593372aa423856b63afccb4cb"
+//let endPoint : String = "https://api.unsplash.com/users/kaspercph/photos?client_id=b4c9f248833db2bb34344a0f4abe7448fbb1950593372aa423856b63afccb4cb"
 typealias hud = SVProgressHUD
-typealias JSObject = [String: Any]
-typealias JSArray = [JSObject]
+let environment = Environment(.dev, host: "https://api.unsplash.com")
+
 //var apiData = [String : Any]()
 
 extension MainViewController{
     func requestAction(){
-        guard let url = URL(string: endPoint) else {return}
-        let param : JSObject = [
-            "client_id" : "b4c9f248833db2bb34344a0f4abe7448fbb1950593372aa423856b63afccb4cb"
-        ]
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
         hud.show()
-
-        let task = URLSession.shared.dataTask(with: request){(data, response, error) in
+        let dispatcher = NetworkDispatcherManager(environment: environment)
+        Photo.dowork(in: dispatcher, completion: {(result) in
             DispatchQueue.main.async { [weak self] in
-                guard let `self` = self else {return}
+                guard let `self` = self else { return }
                 hud.dismiss()
-
-                if let response = response{
-                    print("RESPONSE: \(response)")
-                }
-                if let error = error{
-                    print("ERROR: \(error.localizedDescription)")
-                }
-                if let data = data{
-                    do{
-                        let jsarray = try JSONSerialization.jsonObject(with: data, options: []) as! JSArray
-                        self.photos = Mapper<Photo>().mapArray(JSONArray: jsarray)
-//                        if let name = self.photos[0].users?.name {
-//                            print("\(name)")
-//                            self.nameLabel.text = name
-//                        }
-                        self.nameLabel.text = self.photos[0].users?.name
-                        self.locationLabel.text = self.photos[0].users?.location
-                        if let profileUrl = self.photos[0].users?.profileImage{
-                            self.avaImageView.loadImageWithUrl(profileUrl)
-                        }
-                        if let likes = self.photos[0].users?.likes{
-                            self.likesLabel.text = String(describing: likes)
-                        }
-                        if let photos = self.photos[0].users?.photos{
-                            self.photosLabel.text = String(describing: photos)
-                        }
-                        if let collections = self.photos[0].users?.collections{
-                            self.collectionsLabel.text = String(describing: collections)
-                        }
-                        self.navigationItem.title = self.photos[0].users?.username
-                        self.collectionView.reloadData()
-                        }
-                        
-                    catch{
-                        print("ERROR MAPPING JSON: \(error.localizedDescription)")
+                switch result {
+                case .success(_):
+                    
+                    //guard let photos = photos as? [Photo] else {return}
+                    //self.photos = photos
+                    
+                    self.nameLabel.text = self.photos[0].users?.name
+                    self.locationLabel.text = self.photos[0].users?.location
+                    if let profileUrl = self.photos[0].users?.profileImage{
+                    self.avaImageView.loadImageWithUrl(profileUrl)
                     }
+                    if let likes = self.photos[0].users?.likes{
+                    self.likesLabel.text = String(describing: likes)
+                    }
+                    if let photos = self.photos[0].users?.photos{
+                    self.photosLabel.text = String(describing: photos)
+                    }
+                    if let collections = self.photos[0].users?.collections{
+                    self.collectionsLabel.text = String(describing: collections)
+                    }
+                    self.navigationItem.title = self.photos[0].users?.username
+                    self.collectionView.reloadData()
+                case .failure(let error):
+                    print("ERROR: \(error)")
                 }
             }
-
+            
         }
-        task.resume()
-    }
-}
+        )
+        
+//        guard let url = URL(string: endPoint) else {return}
+//        let param : JSObject = [
+//            "client_id" : "b4c9f248833db2bb34344a0f4abe7448fbb1950593372aa423856b63afccb4cb"
+//        ]
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+        
+ //       hud.show()
 
+//        let task = URLSession.shared.dataTask(with: request){(data, response, error) in
+//            DispatchQueue.main.async { [weak self] in
+//                guard let `self` = self else {return}
+//                hud.dismiss()
+//
+//                if let response = response{
+//                    print("RESPONSE: \(response)")
+//                }
+//                if let error = error{
+//                    print("ERROR: \(error.localizedDescription)")
+//                }
+//                if let data = data{
+//                    do{
+//                        let jsarray = try JSONSerialization.jsonObject(with: data, options: []) as! JSArray
+//                        self.photos = Mapper<Photo>().mapArray(JSONArray: jsarray)
+////                        if let name = self.photos[0].users?.name {
+////                            print("\(name)")
+////                            self.nameLabel.text = name
+////                        }
+//                        self.nameLabel.text = self.photos[0].users?.name
+//                        self.locationLabel.text = self.photos[0].users?.location
+//                        if let profileUrl = self.photos[0].users?.profileImage{
+//                            self.avaImageView.loadImageWithUrl(profileUrl)
+//                        }
+//                        if let likes = self.photos[0].users?.likes{
+//                            self.likesLabel.text = String(describing: likes)
+//                        }
+//                        if let photos = self.photos[0].users?.photos{
+//                            self.photosLabel.text = String(describing: photos)
+//                        }
+//                        if let collections = self.photos[0].users?.collections{
+//                            self.collectionsLabel.text = String(describing: collections)
+//                        }
+//                        self.navigationItem.title = self.photos[0].users?.username
+//                        self.collectionView.reloadData()
+//                        }
+//
+//                    catch{
+//                        print("ERROR MAPPING JSON: \(error.localizedDescription)")
+//                    }
+//                }
+//            }
+//
+//        }
+//        task.resume()
+//    }
+}
+}

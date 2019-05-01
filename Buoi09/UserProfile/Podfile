@@ -6,10 +6,11 @@ target 'UserProfile' do
   use_frameworks!
 
   # Pods for UserProfile
+  pod 'RealmSwift'
   pod 'SVProgressHUD', '2.2.5'
-  pod 'SwiftyGif', '4.2.0'
   pod 'Kingfisher', '4.10.1'
   pod 'ObjectMapper'
   pod 'AFNetworking'
+  
 
 end

@@ -8,31 +8,38 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class User: Mappable {
-    var id : String = ""
-    var username : String = ""
-    var name : String = ""
-    var location : String = ""
-    var profileImage : String = ""
-    var likes : Int = 0
-    var photos : Int = 0
-    var collections : Int = 0
-    
-    required init?(map: Map) {
-        
+class User: Object, Mappable {
+    required convenience init?(map: Map) {
+        self.init()
     }
     
+   @objc dynamic var id : String = ""
+   @objc dynamic var username : String = ""
+   @objc dynamic var name : String = ""
+   @objc dynamic var location : String = ""
+   @objc dynamic var profileImage : String = ""
+   @objc dynamic var likesNo : Int = 0
+   @objc dynamic var photosNo : Int = 0
+   @objc dynamic var collectionsNo : Int = 0
+    
+    let photos = LinkingObjects(fromType: Photo.self, property: "user")
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     func mapping(map: Map) {
         self.id  <- map["id"]
         self.username <- map["username"]
         self.name <- map["name"]
         self.location <- map["location"]
         self.profileImage <- map["profile_image.small"]
-        self.likes <- map["total_likes"]
-        self.photos <- map["total_photos"]
-        self.collections <- map["total_collections"]
+        self.likesNo <- map["total_likes"]
+        self.photosNo <- map["total_photos"]
+        self.collectionsNo <- map["total_collections"]
     }
     
     
 }
+

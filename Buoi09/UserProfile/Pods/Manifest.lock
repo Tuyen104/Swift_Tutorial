@@ -16,31 +16,37 @@ PODS:
     - AFNetworking/NSURLSession
   - Kingfisher (4.10.1)
   - ObjectMapper (3.4.2)
+  - Realm (3.14.1):
+    - Realm/Headers (= 3.14.1)
+  - Realm/Headers (3.14.1)
+  - RealmSwift (3.14.1):
+    - Realm (= 3.14.1)
   - SVProgressHUD (2.2.5)
-  - SwiftyGif (4.2.0)
 
 DEPENDENCIES:
   - AFNetworking
   - Kingfisher (= 4.10.1)
   - ObjectMapper
+  - RealmSwift
   - SVProgressHUD (= 2.2.5)
-  - SwiftyGif (= 4.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Kingfisher
     - ObjectMapper
+    - Realm
+    - RealmSwift
     - SVProgressHUD
-    - SwiftyGif
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
+  RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyGif: a149bf84df23370592f3f075561ae02c8632a314
 
-PODFILE CHECKSUM: c5e401395c63cfff6007c0c08475282fb812968b
+PODFILE CHECKSUM: 8bc2af951c117a60c22cb1e39165406455ca0d8d
 
 COCOAPODS: 1.6.1
